@@ -13,4 +13,19 @@ export class ApiService {
     return this.http.get(api)
   }
 
+  setCountryData(countryID: string) {
+    let subject = new Subject();
+
+    this.fetchCountryData(countryID).subscribe(data: any) => {
+      subject.next({
+        countryName: data.name,
+        countryCapital: data.capitalCity,
+        countryRegion: data.region.value,
+        countryIncomeLevel: data.incomeLevel.value,
+        countryLat: data.latitutde,
+        countryLong: data.longitude,
+      })
+    }
+    return subject.asObservable();
+  }
 }
