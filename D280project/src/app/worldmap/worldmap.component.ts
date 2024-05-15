@@ -10,11 +10,18 @@ import { ApiService } from '../api.service';
 })
 export class WorldmapComponent {
 
+  info: any = {};
+
   constructor(private apiService: ApiService) { }
 
   setCountryData(event: any) {
     //console.log('event', event.target.id);
-    this.apiService.setCountryData(event.target.id).subscribe(data => console.log(data))
+    this.apiService.setCountryData(event.target.id).subscribe(data: any => {
+      console.log(data),
+        this.info = {
+          ...data,
+        }
+    })
 
   }
 }
