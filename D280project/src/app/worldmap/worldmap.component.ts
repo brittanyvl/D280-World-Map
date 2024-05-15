@@ -15,7 +15,7 @@ export class WorldmapComponent {
   setCountryData(event: any) {
     //console.log('event', event.target.id);
     this.apiService.fetchCountryData(event.target.id);
-    console.log(this.apiService.fetchCountryData(event.target.id);
-  }
+    this.apiService.fetchCountryData(event.target.id).subscribe(data => console.log(data))
 
+  }
 }
