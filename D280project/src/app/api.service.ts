@@ -14,6 +14,12 @@ export class ApiService {
     return this.http.get(api);
   }
 
+  setCountryData(country: string) {
+    this.fetchCountryData(country).subscribe((data: any) => {
+
+
+    });
+
+  }
 
 }
-
