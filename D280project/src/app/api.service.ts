@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, async } from 'rxjs';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -15,10 +16,20 @@ export class ApiService {
   }
 
   setCountryData(country: string) {
+    let subject = new Subject();
     this.fetchCountryData(country).subscribe((data: any) => {
+      subject.next({
+        countryName: data[1][0].name,
+        countryCapital: data[1][0].capitalCity,
+        countryRegion: data[1][0].adminregion.value,
+        countryIncomeLevel: data[1][0].incomeLevel.value,
+        countryLat: data[1][0].latitude,
+        countryLong: data[1][0].longitude
+      })
 
+    })
 
-    });
+    return subject.asObservable();
 
   }
 
