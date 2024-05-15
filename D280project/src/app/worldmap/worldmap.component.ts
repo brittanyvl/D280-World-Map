@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-worldmap',
@@ -9,8 +10,12 @@ import { Component } from '@angular/core';
 })
 export class WorldmapComponent {
 
+  constructor(private apiService: ApiService) { }
+
   setCountryData(event: any) {
-    console.log('event', event.target.id)
+    //console.log('event', event.target.id);
+    this.apiService.fetchCountryData(event.target.id);
+    console.log(this.apiService.fetchCountryData(event.target.id);
   }
 
 }
