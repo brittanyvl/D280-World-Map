@@ -21,7 +21,7 @@ export class ApiService {
       subject.next({
         countryName: data[1][0].name,
         countryCapital: data[1][0].capitalCity,
-        countryRegion: data[1][0].adminregion.value,
+        countryRegion: data[1][0].region.value,
         countryIncomeLevel: data[1][0].incomeLevel.value,
         countryLat: data[1][0].latitude,
         countryLong: data[1][0].longitude
