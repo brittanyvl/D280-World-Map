@@ -1,6 +1,6 @@
 <div class="row">
-    <div class="column" id="mapcolumn">
 
+    <div class="column" id="mapcolumn">
         <!-- Created for MapSVG plugin: http://mapsvg.com -->
         <svg xmlns:mapsvg="http://mapsvg.com" xmlns:dc="http://purl.org/dc/elements/1.1/"
             xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg"
@@ -776,11 +776,13 @@
 
     </div>
     <div class="column" id="datacolumn">
-        <h3>Country: {{info.countryName}}</h3>
-        <p>Capital City: {{info.countryCapital}}</p>
-        <p>Region: {{info.countryRegion}}</p>
-        <p>Income Level: {{info.countryIncomeLevel}}</p>
-        <p>Latitutde: {{info.countryLat}}</p>
-        <p>Longitutde: {{info.countryLong}}</p>
+        <h3><span>Country:</span> {{info.countryName}}</h3>
+        <ul>
+            <li><span>Capital City:</span> {{info.countryCapital}}</li>
+            <li><span>Region:</span> {{info.countryRegion}}</li>
+            <li><span>Income Level:</span> {{info.countryIncomeLevel}}</li>
+            <li><span>Latitutde:</span> {{info.countryLat}}</li>
+            <li><span>Longitutde:</span> {{info.countryLong}}</li>
+        </ul>
     </div>
 </div>
